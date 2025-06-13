@@ -52,8 +52,8 @@ jobs:
         with:
           push: true
           tags: |
-            ${{ vars.DOCKERHUB_USERNAME }}/timely-todo-list:latest
-            ghcr.io/${{ steps.actor_lc.outputs.lowercase }}/timely-todo-list:latest
+            ${{ vars.DOCKERHUB_USERNAME }}/timely-todo-list-standalone:latest
+            ghcr.io/${{ steps.actor_lc.outputs.lowercase }}/timely-todo-list-standalone:latest
 
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v2
