@@ -1,0 +1,28 @@
+services:
+  todo-list-standalone:
+    container_name: timely-todo-list-standalone
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: timely-todo-list:latest
+    ports:
+      - 3033:8080
+    environment:
+      - NODE_ENV=production
+    env_file:
+      - .env.production
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+    expose:
+      - 3033
+    networks:
+      - timely_default
+
+networks:
+  timely_default:
+    external: true
