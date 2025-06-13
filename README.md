@@ -1,54 +1,60 @@
-# React + TypeScript + Vite
+# Todo-list
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img src="./ogImage.jpg" />
 
-Currently, two official plugins are available:
+Todo list made using React.js
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demo:
 
-## Expanding the ESLint configuration
+https://mcesarczyk.github.io/timely-todo-list/
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Used technologies:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- React
+- Styled components
+- Axios
+- Tanstack Query
+- React Router
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Short description:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+With this app You're able to:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- add/remove/edit tasks
+- mark it as done individually
+- mark as done all at once
+- hide done tasks
+- view single task details
+- search thru tasks using simple search
+
+Additionally, the app automatically saves content and state of wtitten down tasks as well as chosen laguage in local storage.
+
+## Connectivity:
+
+The app is connected to API by setting `VITE_API_URL` environment variable in `.env` file.
+
+# Powered by [Vite](https://github.com/vitejs/vite). ![vite_logo](./vite.svg)
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `pnpm dev`
+
+Runs the app in the development mode.\
+Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+### `pnpm build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+You can check build by running:
+
+### `pnpm preview`
