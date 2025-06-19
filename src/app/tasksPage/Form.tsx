@@ -27,7 +27,7 @@ export const Form = () => {
     createTask({
       id: Math.random(),
       title: trimmedContent,
-      content: "",
+      content: trimmedContent,
       done: false,
       createdAt: new Date().toISOString(),
     });
