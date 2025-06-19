@@ -1,9 +1,13 @@
 name: Build and push Docker image
+
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches:
+      - main
   pull_request:
+    types: [closed]
+    branches:
+      - main
 
 env:
   REGISTRY: ghcr.io
@@ -11,6 +15,7 @@ env:
 
 jobs:
   build_and_push:
+    if: github.event.pull_request.merged == true
     permissions:
       contents: read
       packages: write
